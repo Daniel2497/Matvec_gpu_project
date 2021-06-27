@@ -1,1 +1,3 @@
 shellscripts/onlyshared
+shellscripts/onlyatomic
+shellscripts/sharedatomic
