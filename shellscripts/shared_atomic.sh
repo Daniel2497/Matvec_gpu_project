@@ -9,7 +9,7 @@ for ((config=1; config<=3;config++))
     		for ((i=1;i<=16;i*=2))
     			do
     			echo "i="$i >> sharedatomicresults
-    			./onlyshared $sx 16 $i $config | grep -i [C] >>sharedatomicresults
+    			./sharedatomic $sx 16 $i $config | grep -i [C] >>sharedatomicresults
     			echo >> sharedatomicresults
     		done
     		echo >> sharedatomicresults
