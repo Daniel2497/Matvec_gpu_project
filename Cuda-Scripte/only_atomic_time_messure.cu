@@ -97,6 +97,20 @@ int main(int argc, char**argv)
    dim3 block(sx,sy);
    dim3 grid(size/block.x,size/block.y);
    
+	//cache Konfiguration
+	if(argc>4){
+		if(atoi(argv[4])==1){//L1 Prefered
+			std::cout<<"16 kB shared, 48kB L1"<<std::endl;
+			cudaFuncSetCacheConfig(kernel, cudaFuncCachePreferL1);
+		} else if(atoi(argv[4])==2){
+			std::cout<<"48kB shared, 16kb L1"<<std::endl;
+			cudaFuncSetCacheConfig(kernel, cudaFuncCachePreferShared);
+		}else{
+			std::cout<<"32kB shared, 32kB L1"<<std::endl;
+			cudaFuncSetCacheConfig(kernel, cudaFuncCachePreferNone);
+		}
+	}
+	
    //TODO: kernelAx ausführen und Zeit messen
    cudaEventCreate(&start);
    cudaEventCreate(&end);
@@ -106,7 +120,7 @@ int main(int argc, char**argv)
    cudaEventSynchronize(end);
    cudaEventElapsedTime(&kernelA_time,start,end);
    
-   if(argc>4){
+   if(argc>5){
     cudaMemcpy(buff_host,buff_dev,size*sizeof(DTYPE),cudaMemcpyDeviceToHost);
     for(int lj=0;lj<10;lj++){
    		std::cout<<buff_host[lj]<<std::endl;
