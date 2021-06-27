@@ -1,0 +1,333 @@
+Cachekonfiguration 1
+sx= 4 , sy=16
+i=1
+Computation time: 0.598944
+Computation Performance in GFLOPs: 3.50142
+
+i=2
+Computation time: 3.64662
+Computation Performance in GFLOPs: 2.30038
+
+i=4
+Computation time: 17.0533
+Computation Performance in GFLOPs: 1.96762
+
+i=8
+Computation time: 76.0456
+Computation Performance in GFLOPs: 1.76496
+
+i=16
+Computation time: 297.301
+Computation Performance in GFLOPs: 1.80581
+
+
+sx= 8 , sy=16
+i=1
+Computation time: 0.534528
+Computation Performance in GFLOPs: 3.92337
+
+i=2
+Computation time: 3.25168
+Computation Performance in GFLOPs: 2.57978
+
+i=4
+Computation time: 15.4103
+Computation Performance in GFLOPs: 2.1774
+
+i=8
+Computation time: 68.5927
+Computation Performance in GFLOPs: 1.95674
+
+i=16
+Computation time: 292.42
+Computation Performance in GFLOPs: 1.83596
+
+
+sx= 16 , sy=16
+i=1
+Computation time: 0.655008
+Computation Performance in GFLOPs: 3.20172
+
+i=2
+Computation time: 4.17318
+Computation Performance in GFLOPs: 2.01012
+
+i=4
+Computation time: 19.8235
+Computation Performance in GFLOPs: 1.69266
+
+i=8
+Computation time: 94.1529
+Computation Performance in GFLOPs: 1.42553
+
+i=16
+Computation time: 414.883
+Computation Performance in GFLOPs: 1.29403
+
+
+sx= 32 , sy=16
+i=1
+Computation time: 0.603008
+Computation Performance in GFLOPs: 3.47782
+
+i=2
+Computation time: 3.78035
+Computation Performance in GFLOPs: 2.219
+
+i=4
+Computation time: 20.1127
+Computation Performance in GFLOPs: 1.66832
+
+i=8
+Computation time: 96.6663
+Computation Performance in GFLOPs: 1.38846
+
+i=16
+Computation time: 420.566
+Computation Performance in GFLOPs: 1.27654
+
+
+sx= 64 , sy=16
+i=1
+Computation time: 0.576704
+Computation Performance in GFLOPs: 3.63644
+
+i=2
+Computation time: 3.72096
+Computation Performance in GFLOPs: 2.25442
+
+i=4
+Computation time: 19.1816
+Computation Performance in GFLOPs: 1.7493
+
+i=8
+Computation time: 98.8038
+Computation Performance in GFLOPs: 1.35843
+
+i=16
+Computation time: 422.426
+Computation Performance in GFLOPs: 1.27092
+
+
+Cachekonfiguration 2
+sx= 4 , sy=16
+i=1
+Computation time: 0.54128
+Computation Performance in GFLOPs: 3.87443
+
+i=2
+Computation time: 3.32922
+Computation Performance in GFLOPs: 2.51969
+
+i=4
+Computation time: 15.8378
+Computation Performance in GFLOPs: 2.11863
+
+i=8
+Computation time: 69.8158
+Computation Performance in GFLOPs: 1.92245
+
+i=16
+Computation time: 296.607
+Computation Performance in GFLOPs: 1.81004
+
+
+sx= 8 , sy=16
+i=1
+Computation time: 0.530592
+Computation Performance in GFLOPs: 3.95248
+
+i=2
+Computation time: 3.28214
+Computation Performance in GFLOPs: 2.55583
+
+i=4
+Computation time: 15.2878
+Computation Performance in GFLOPs: 2.19485
+
+i=8
+Computation time: 69.1242
+Computation Performance in GFLOPs: 1.94169
+
+i=16
+Computation time: 291.71
+Computation Performance in GFLOPs: 1.84043
+
+
+sx= 16 , sy=16
+i=1
+Computation time: 0.645216
+Computation Performance in GFLOPs: 3.25031
+
+i=2
+Computation time: 4.23626
+Computation Performance in GFLOPs: 1.98019
+
+i=4
+Computation time: 19.5876
+Computation Performance in GFLOPs: 1.71304
+
+i=8
+Computation time: 95.0221
+Computation Performance in GFLOPs: 1.41249
+
+i=16
+Computation time: 414.986
+Computation Performance in GFLOPs: 1.29371
+
+
+sx= 32 , sy=16
+i=1
+Computation time: 0.595296
+Computation Performance in GFLOPs: 3.52287
+
+i=2
+Computation time: 3.79658
+Computation Performance in GFLOPs: 2.20952
+
+i=4
+Computation time: 20.1462
+Computation Performance in GFLOPs: 1.66555
+
+i=8
+Computation time: 96.5354
+Computation Performance in GFLOPs: 1.39035
+
+i=16
+Computation time: 420.697
+Computation Performance in GFLOPs: 1.27615
+
+
+sx= 64 , sy=16
+i=1
+Computation time: 0.601088
+Computation Performance in GFLOPs: 3.48893
+
+i=2
+Computation time: 3.64464
+Computation Performance in GFLOPs: 2.30163
+
+i=4
+Computation time: 19.165
+Computation Performance in GFLOPs: 1.75082
+
+i=8
+Computation time: 99.134
+Computation Performance in GFLOPs: 1.3539
+
+i=16
+Computation time: 422.055
+Computation Performance in GFLOPs: 1.27204
+
+
+Cachekonfiguration 3
+sx= 4 , sy=16
+i=1
+Computation time: 0.521184
+Computation Performance in GFLOPs: 4.02382
+
+i=2
+Computation time: 3.34954
+Computation Performance in GFLOPs: 2.50441
+
+i=4
+Computation time: 15.7411
+Computation Performance in GFLOPs: 2.13165
+
+i=8
+Computation time: 69.8908
+Computation Performance in GFLOPs: 1.92039
+
+i=16
+Computation time: 296.77
+Computation Performance in GFLOPs: 1.80904
+
+
+sx= 8 , sy=16
+i=1
+Computation time: 0.531328
+Computation Performance in GFLOPs: 3.947
+
+i=2
+Computation time: 3.23632
+Computation Performance in GFLOPs: 2.59202
+
+i=4
+Computation time: 15.4809
+Computation Performance in GFLOPs: 2.16747
+
+i=8
+Computation time: 68.4322
+Computation Performance in GFLOPs: 1.96132
+
+i=16
+Computation time: 292.159
+Computation Performance in GFLOPs: 1.8376
+
+
+sx= 16 , sy=16
+i=1
+Computation time: 0.589376
+Computation Performance in GFLOPs: 3.55826
+
+i=2
+Computation time: 4.08979
+Computation Performance in GFLOPs: 2.05111
+
+i=4
+Computation time: 20.1022
+Computation Performance in GFLOPs: 1.66919
+
+i=8
+Computation time: 94.5972
+Computation Performance in GFLOPs: 1.41883
+
+i=16
+Computation time: 414.892
+Computation Performance in GFLOPs: 1.294
+
+
+sx= 32 , sy=16
+i=1
+Computation time: 0.62336
+Computation Performance in GFLOPs: 3.36427
+
+i=2
+Computation time: 3.7687
+Computation Performance in GFLOPs: 2.22586
+
+i=4
+Computation time: 20.2695
+Computation Performance in GFLOPs: 1.65542
+
+i=8
+Computation time: 96.702
+Computation Performance in GFLOPs: 1.38795
+
+i=16
+Computation time: 420.273
+Computation Performance in GFLOPs: 1.27743
+
+
+sx= 64 , sy=16
+i=1
+Computation time: 0.579232
+Computation Performance in GFLOPs: 3.62057
+
+i=2
+Computation time: 3.63008
+Computation Performance in GFLOPs: 2.31086
+
+i=4
+Computation time: 19.1977
+Computation Performance in GFLOPs: 1.74783
+
+i=8
+Computation time: 98.9248
+Computation Performance in GFLOPs: 1.35676
+
+i=16
+Computation time: 422.224
+Computation Performance in GFLOPs: 1.27153
+
+
