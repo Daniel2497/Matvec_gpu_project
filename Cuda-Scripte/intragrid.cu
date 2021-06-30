@@ -17,18 +17,17 @@ __global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* y,int size, int numberBlocks){
 
     __shared__ DTYPE sm[1024];
 
-    //Soviele Durchlaeufe werden entlang der y-Achse benoetigt, sodass Grid-Synchronisation moeglich bleibt
-    int rx=size/blockDim.x;
+    int lx=size/blockDim.x;
     if(size % blockDim.x != 0)
-    	rx++;    
-    int ry=size/(numberBlocks*blockDim.y);
+    	lx++;    
+    int ly=size/(numberBlocks*blockDim.y);
     if(size % numberBlocks*blockDim.y != 0);
-    	ry++;        
-    for(int h=0;h<rx;h++){
-        for(int g=0;g<ry;g++){
-            int i=threadIdx.x+h*blockDim.x;
-            int j=threadIdx.y+blockIdx.y*blockDim.y+g*blockDim.y*numberBlocks;
-            if(i<size&&j<size){
+    	ly++;        
+    for(int g=0;g<lx;g++){
+        for(int h=0;h<ly;h++){
+            int i=threadIdx.x+g*blockDim.x;
+            int j=threadIdx.y+blockIdx.y*blockDim.y+h*blockDim.y*numberBlocks;
+            if(i<size && j<size){
                 sm[threadIdx.x+threadIdx.y*blockDim.x]=a[i+j*size]*x[i];
                 __syncthreads();
                 for (int k=blockDim.x/2;k>0;k/=2){
@@ -85,10 +84,6 @@ int main(int argc, char**argv)
    	std::cout<<"Do experiment with individual settings"<<std::endl;
    	std::cout<<"Sx="<<sx<<"\n Sy="<<sy<<"\n Size=1024*"<<i<<std::endl;
        }
-   /*if(sx*sy!=t){
-   	std::cout<<"Sx*Sy has to be equal to threads per block"<<std::endl;
-   	return -1;
-   }*/
    int size=1024*i;
    int xblocks=size/sx;
    //Datenfelder anlegen für Host
@@ -137,10 +132,6 @@ int main(int argc, char**argv)
 			cudaFuncSetCacheConfig(kernel, cudaFuncCachePreferNone);
 		}
 	}
-    //block.x=64;
-    //block.y=16;
-
-    //Zur Synchronisierung wird ein x-Block benoetigt, auf welchem dann viel gearbeitet wird (Geringe Parallelitaet hierdurch)
     grid.x=1;
     grid.y=size/block.y;
     if(size % block.y !=0)
