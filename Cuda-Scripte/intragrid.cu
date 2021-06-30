@@ -18,11 +18,11 @@ __global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* y,int size, int numberBlocks){
     __shared__ DTYPE sm[1024];
 
     //Soviele Durchlaeufe werden entlang der y-Achse benoetigt, sodass Grid-Synchronisation moeglich bleibt
-    int rx=size/blockDim.x
-    if(size % blockDim.x != 0);
+    int rx=size/blockDim.x;
+    if(size % blockDim.x != 0)
     	rx++;    
-    int ry=size/(numberBlock*blockDim.y);
-    if(size % numberBlock*blockDim.y != 0);
+    int ry=size/(numberBlocks*blockDim.y);
+    if(size % numberBlocks*blockDim.y != 0);
     	ry++;        
     for(int h=0;h<rx;h++){
         for(int g=0;g<ry;g++){
@@ -124,7 +124,7 @@ int main(int argc, char**argv)
    dim3 block(sx,sy);
    dim3 grid(size/block.x,size/block.y);
    
-/*	//cache Konfiguration
+	//cache Konfiguration
 	if(argc>4){
 		if(atoi(argv[4])==1){//L1 Prefered
 			std::cout<<"16 kB shared, 48kB L1"<<std::endl;
@@ -136,9 +136,9 @@ int main(int argc, char**argv)
 			std::cout<<"32kB shared, 32kB L1"<<std::endl;
 			cudaFuncSetCacheConfig(kernel, cudaFuncCachePreferNone);
 		}
-	}*/
-    block.x=64;
-    block.y=16;
+	}
+    //block.x=64;
+    //block.y=16;
 
     //Zur Synchronisierung wird ein x-Block benoetigt, auf welchem dann viel gearbeitet wird (Geringe Parallelitaet hierdurch)
     grid.x=1;
