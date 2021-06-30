@@ -11,20 +11,19 @@ namespace cg=cooperative_groups;
 
 #define DTYPE float
 
-//Nutzen von Intra-Grid Groups (SM-Reduktion ueber Threadbloecke)
 __global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* y,int size, int numberBlocks){
     
     grid_group grid=this_grid();
 
-    //Kann dies auch extern ueber spezielle Kernelfunktion uebergeben werden?
-    //Muss angepasst werden bei Veraenderung der Blockgroesse!!
     __shared__ DTYPE sm[1024];
 
     //Soviele Durchlaeufe werden entlang der y-Achse benoetigt, sodass Grid-Synchronisation moeglich bleibt
-    int ry=(int)ceil((float)size/(numberBlocks*blockDim.y));
-    //Soviele Durchlaeufe werden entlang der x-Dimension benoetigt
-    int rx=(int)ceil((float)size/blockDim.x);
-
+    int rx=size/blockDim.x
+    if(size % blockDim.x != 0);
+    	rx++;    
+    int ry=size/(numberBlock*blockDim.y);
+    if(size % numberBlock*blockDim.y != 0);
+    	ry++;        
     for(int h=0;h<rx;h++){
         for(int g=0;g<ry;g++){
             int i=threadIdx.x+h*blockDim.x;
