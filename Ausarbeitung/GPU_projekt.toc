@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}Motivation}{3}%
+\contentsline {section}{\numberline {2}Algorithmen zur Matrix-Vektor-Operation}{3}%
+\contentsline {subsection}{\numberline {2.1}Sharedmemory mit wiederholten Aufruf des Kernels}{3}%
+\contentsline {subsection}{\numberline {2.2}Sharedmemory mit Atomics}{4}%
+\contentsline {subsection}{\numberline {2.3}Nur Atomic Operationen}{5}%
+\contentsline {subsection}{\numberline {2.4}Intra grid Groups}{5}%

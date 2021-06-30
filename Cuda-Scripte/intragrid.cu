@@ -11,7 +11,7 @@ namespace cg=cooperative_groups;
 
 #define DTYPE float
 
-__global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* y,int size, int numberBlocks){
+__global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* buff,int size, int numberBlocks){
     
     grid_group grid=this_grid();
 
@@ -36,7 +36,7 @@ __global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* y,int size, int numberBlocks){
                     __syncthreads();
                 }
                 if (threadIdx.x==0){
-                    y[j]+=sm[threadIdx.y*blockDim.x];
+                    buff[j]+=sm[threadIdx.y*blockDim.x];
                 }
             }
         }
