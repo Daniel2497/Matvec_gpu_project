@@ -1,0 +1,69 @@
+Cachekonfiguration 1
+sx= 64 , sy=16
+i=1
+Computation time: 0.03136
+Computation Performance in GFLOPs: 66.8735
+
+i=2
+Computation time: 0.069664
+Computation Performance in GFLOPs: 120.415
+
+i=4
+Computation time: 0.195008
+Computation Performance in GFLOPs: 172.067
+
+i=8
+Computation time: 0.714976
+Computation Performance in GFLOPs: 187.723
+
+i=16
+Computation time: 2.89165
+Computation Performance in GFLOPs: 185.663
+
+
+Cachekonfiguration 2
+sx= 64 , sy=16
+i=1
+Computation time: 0.029856
+Computation Performance in GFLOPs: 70.2422
+
+i=2
+Computation time: 0.067744
+Computation Performance in GFLOPs: 123.828
+
+i=4
+Computation time: 0.194592
+Computation Performance in GFLOPs: 172.435
+
+i=8
+Computation time: 0.70048
+Computation Performance in GFLOPs: 191.608
+
+i=16
+Computation time: 2.86576
+Computation Performance in GFLOPs: 187.34
+
+
+Cachekonfiguration 3
+sx= 64 , sy=16
+i=1
+Computation time: 0.0296
+Computation Performance in GFLOPs: 70.8497
+
+i=2
+Computation time: 0.0688
+Computation Performance in GFLOPs: 121.927
+
+i=4
+Computation time: 0.19456
+Computation Performance in GFLOPs: 172.463
+
+i=8
+Computation time: 0.70656
+Computation Performance in GFLOPs: 189.959
+
+i=16
+Computation time: 2.88285
+Computation Performance in GFLOPs: 186.229
+
+
