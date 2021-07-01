@@ -161,7 +161,7 @@ int main(int argc, char**argv)
 
    if(argc>5){
     cudaMemcpy(buff_host,buff_dev,size*sizeof(DTYPE),cudaMemcpyDeviceToHost);
-    for(int lj=0;lj<10;lj++){
+    for(int lj=size-10;lj<size;lj++){
    		std::cout<<buff_host[lj]<<std::endl;
     } 
    }
