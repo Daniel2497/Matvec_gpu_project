@@ -74,7 +74,15 @@
 	 \subsection{Nur Atomic Operationen, Kernel 3}
 	 Ähnlich wie in den anderen Methoden bekommt hier wieder jedem Eintrag aus der Matrix $A$ genau ein thread zugeordnet, der das Produkt mit der entsprechenden Vektor Komponente ermittelt. Der speichert das Produkt in eine lokale Variable addsc ab. Es wurde vorher ein Speicher buff angelegt, welcher so viele belegbare Speicheradresse besitzt, wie die Matrix $A$ Zeilen. Threads, welche das Produkt mittel des Matrixeintrag aus der gleichen Spalten errechnet haben addieren ihr Ergebnis jetzt auf den entsprechenden Eintrag in der variablen buff auf, sodass buff am Ende ein Spaltenvektor, welcher dem Matrix-Vektor Produkt entspricht, liefert.
 	 \subsection{Intra grid Groups, Kernel 4}  
-	 
+	 In der Methode mit Intra grid Groups sollen sich Threadblöcke untereinander synchronisieren. Damit dies funktioniert kann der Kernel nur eine gewissen Größe an Threadblöcken Gleichzeit starten. Um die maximale Anzahl an threadblöcken, welche sich Synchronisieren können herauszufinden gibt es in cuda den Befehl:
+	 \begin{lstlisting}
+	 	cudaOccupancyMaxActiveBlocksPerMultiprocessor(&numBlocksPerSm,kernel,sx,0);
+	 \end{lstlisting}
+ 	welche die Anzahl an maximalen verwendbaren Threadblöcken in die Integer variable numBlocksPerSm schreibt. Ich habe mich in der Implementierung dafür entschieden, dass die verschieden Threadblöcke über die Zeilen gehen, wohin entlang der Spalten nur ein Threadblock untereinander stehen. Folglich wurde das grid wie folgt definiert:
+ 	\begin{lstlisting}
+ 		grid.y=1;
+ 		grid.x=(int)ceilf(numBlocksPerSm);
+ 	\end{lstlisting}
 	 \subsection{Shuffle}
 	 Eine weitere Methode zur Lösung des Problems ist die Verwendung von shuffle Operationen. Diese Bedarf aber einiges mehr an Implementierungsaufwand und wird daher in dieser Stelle nicht näher erläutert. Jedoch ist diese Methode deutliche performanter auf Grafikkarten als die bisher gezeigt sodass ich sie nicht unerwähnt lassen möchte.
 
@@ -87,7 +95,7 @@
 	 \begin{table}{H}
 	 	\centering
 	 	\begin{tabular}{llll}
-	 		\textbf{Model}  & \textbf{cuda Cores} & \textbf{Takt GHz}  & \textbf{theo. SP. Performace} &\\
+	 		\textbf{Model}  & \textbf{cuda Cores} & \textbf{Takt GHz}  & \textbf{theo. SP. Performace} \\
 	 		GTX780           & 2304       & 0,87 (9 Boost) & 3976 GFlops   \\
 	 		P100       & 3584 & 1,33 (1,48 Boost) &9400     GFlops        \\
 	 		RTX2070super        & 2560 & 1,61 (1,77 Boost) &   8243 GFlops         \\

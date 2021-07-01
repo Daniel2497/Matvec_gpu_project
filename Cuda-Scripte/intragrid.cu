@@ -16,17 +16,21 @@ __global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* buff,int size, int numberBlock
     grid_group grid=this_grid();
 
     __shared__ DTYPE sm[1024];
-
-    int lx=size/blockDim.x;
-    if(size % blockDim.x != 0)
+    
+    //es werden numberBlocks viele thread Blöcke gestartet
+    //da diese zwangsläufig ausrechen die Gesamte Spalten abzudecken muss innerhalb der threads innerhalb der threadblöck über mehrere Matrixelement gehen. Insgesamt muss somit jeder thread lx*ly Produkte berechnen.
+    int lx=size/(numberBlocks*blockDim.x);
+    if(size % numberBlocks*blockDim.x != 0)
     	lx++;    
-    int ly=size/(numberBlocks*blockDim.y);
-    if(size % numberBlocks*blockDim.y != 0);
+    //Es y Komponente des Grids ist 1, deshalb muss jeder threadblock alle Zeilen seiner Spalten abdecken. Jeder thread muss somit lx*ly Produkte berechnen.
+    int ly=size/(blockDim.y);
+    if(size % blockDim.y != 0);
     	ly++;        
-    for(int g=0;g<lx;g++){
-        for(int h=0;h<ly;h++){
-            int i=threadIdx.x+g*blockDim.x;
-            int j=threadIdx.y+blockIdx.y*blockDim.y+h*blockDim.y*numberBlocks;
+    
+    for(int h=0;h<ly;h++){
+    	for(int g=0;g<lx;g++){
+            int i=threadIdx.x+blockIdx.x*blockDim.x+g*blockDim.x*numberBlocks;
+	int j=threadIdx.y+h*blockDim.y;
             if(i<size && j<size){
                 sm[threadIdx.x+threadIdx.y*blockDim.x]=a[i+j*size]*x[i];
                 __syncthreads();
@@ -36,11 +40,12 @@ __global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* buff,int size, int numberBlock
                     __syncthreads();
                 }
                 if (threadIdx.x==0){
-                    buff[j]+=sm[threadIdx.y*blockDim.x];
+			atomicAdd(&buff[j],sm[threadIdx.y*blockDim.x]);
+                    //buff[j]+=sm[threadIdx.y*blockDim.x];//somit leider trotz thread und gridsynchronisierung falsche Ergebnisse, daher mit AtomicAdd
                 }
             }
         }
-        grid.sync();                
+        grid.sync();//Synchronisierung der threadblöcke                
      }
 }
 
@@ -117,7 +122,7 @@ int main(int argc, char**argv)
    cudaMemcpy(x_dev,x_host,size*sizeof(DTYPE),cudaMemcpyHostToDevice);
    
    dim3 block(sx,sy);
-   dim3 grid(size/block.x,size/block.y);
+   dim3 grid;
    
 	//cache Konfiguration
 	if(argc>4){
@@ -132,10 +137,10 @@ int main(int argc, char**argv)
 			cudaFuncSetCacheConfig(kernel, cudaFuncCachePreferNone);
 		}
 	}
-    grid.x=1;
-    grid.y=size/block.y;
-    if(size % block.y !=0)
-    	grid.y++;
+    grid.y=1;
+    grid.x=(int)ceilf(numBlocksPerSm);
+    if(size % block.x !=0)
+    	grid.x++;
 	
     int dev=0;
     cudaGetDevice(&dev);
@@ -145,9 +150,10 @@ int main(int argc, char**argv)
     int numBlocksPerSm;
     
     cudaOccupancyMaxActiveBlocksPerMultiprocessor(&numBlocksPerSm,kernel,sx,0);
-
+    
+    //Argumente welche dem Kernel übergeben werden müssen vorher definiert werden und in eine Variable arg gepseichert werden
     void *args[]={(void *)&a_dev,(void*)&x_dev,(void*)&buff_dev,(void*)&size,(void*)&numBlocksPerSm};
-    grid.y=(int)ceilf(numBlocksPerSm);
+    
 	
    //TODO: kernelAx ausführen und Zeit messen
    cudaEventCreate(&start);
@@ -165,6 +171,7 @@ int main(int argc, char**argv)
    		std::cout<<buff_host[lj]<<std::endl;
     } 
    }
+	std::cout<<"Numberblocks"<<numBlocksPerSm<<std::endl;
    std::cout<<"Computation time: "<<kernelA_time<<std::endl;  
 	float gflops=pow(10,-6)*size*size*2/kernelA_time;
    std::cout<<"Computation Performance in GFLOPs: "<<gflops<<std::endl;
