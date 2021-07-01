@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.24)  1 JUL 2021 21:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.24)  2 JUL 2021 00:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -227,25 +227,31 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count266
 \l__pdf_internal_box=\box51
 )
-(./GPU_projekt.aux)
+(./GPU_projekt.aux
+
+LaTeX Warning: Label `manuel' multiply defined.
+
+
+LaTeX Warning: Label `manuel' multiply defined.
+
+)
 \openout1 = `GPU_projekt.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count267
 \scratchdimen=\dimen154
@@ -294,113 +300,245 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout3 = `GPU_projekt.toc'.
 
  [2]
-Overfull \hbox (0.76279pt too wide) in paragraph at lines 60--72
+Overfull \hbox (0.76279pt too wide) in paragraph at lines 61--73
 \T1/cmr/m/n/10 Damit liefert jeder thread-block als Zwis-ch-en-ergeb-nis ein Sp
 al-tenvek-tor der Gröÿe
  []
 
 
-Overfull \hbox (10.38544pt too wide) in paragraph at lines 60--72
+Overfull \hbox (10.38544pt too wide) in paragraph at lines 61--73
 \T1/cmr/m/n/10 blöcke in gle-icher Rei-hen-folge in buff un-tere-inan-der, die 
 Ergeb-nisse der nebeneinan-
  []
 
 [3] [4]
-Overfull \hbox (118.99086pt too wide) in paragraph at lines 79--80
+Overfull \hbox (118.99086pt too wide) in paragraph at lines 80--81
 [][][][][][][][][][][] 
  []
 
+
+Overfull \hbox (2.02637pt too wide) in paragraph at lines 87--90
+\T1/cmr/m/n/10 Neben den An-deren Gröÿen muss natür-lich nun auch die Gröÿe num
+-BlocksPerSm
+ []
+
 [5]
-Overfull \hbox (6.58704pt too wide) in paragraph at lines 95--103
- [] 
+Overfull \hbox (113.89206pt too wide) in paragraph at lines 105--106
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (2.41516pt too wide) in paragraph at lines 110--118
+Overfull \hbox (57.80525pt too wide) in paragraph at lines 110--111
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (11.91605pt too wide) in paragraph at lines 111--112
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.46973pt too wide) in paragraph at lines 116--118
+\T1/cmr/m/n/10 Die ur-sprünglicher Idee war über eine ein-fache Ad-di-tion die 
+ver-schiede-nen Thread-
+ []
+
+[6]
+Overfull \hbox (6.58704pt too wide) in paragraph at lines 129--135
+ [][] 
+ []
+
+
+Overfull \hbox (2.41516pt too wide) in paragraph at lines 145--146
 \T1/cmr/m/n/10 ver-schiedene threads auf die sel-ben Spe-icherzellen schreiben,
  welche keinen geteil-
  []
 
 
-Overfull \hbox (5.37741pt too wide) in paragraph at lines 110--118
+Overfull \hbox (5.37741pt too wide) in paragraph at lines 145--146
 \T1/cmr/m/n/10 ten Spe-icher en-thal-ten. Dies hat zur Folge, dass die entsprec
 hen-den Spe-icherzellen
  []
 
-[6] [7]
-Overfull \hbox (11.91605pt too wide) in paragraph at lines 140--141
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+[7]
+<../Diagramme/allshared_changei.pdf, id=44, page=8, 505.89pt x 505.89pt>
+File: ../Diagramme/allshared_changei.pdf Graphic file (type pdf)
+<use ../Diagramme/allshared_changei.pdf, page 8>
+Package pdftex.def Info: ../Diagramme/allshared_changei.pdf , page8 used on inp
+ut line 163.
+(pdftex.def)             Requested size: 404.71254pt x 404.71254pt.
+
+Overfull \hbox (59.71254pt too wide) in paragraph at lines 163--164
+[][] 
+ []
+
+<../Diagramme/allshared_changei.pdf, id=45, page=2, 505.89pt x 505.89pt>
+File: ../Diagramme/allshared_changei.pdf Graphic file (type pdf)
+<use ../Diagramme/allshared_changei.pdf, page 2>
+Package pdftex.def Info: ../Diagramme/allshared_changei.pdf , page2 used on inp
+ut line 170.
+(pdftex.def)             Requested size: 404.71254pt x 404.71254pt.
+
+Overfull \hbox (59.71254pt too wide) in paragraph at lines 170--171
+[][] 
+ []
+
+<../Diagramme/allshared_changei.pdf, id=46, page=5, 505.89pt x 505.89pt>
+File: ../Diagramme/allshared_changei.pdf Graphic file (type pdf)
+<use ../Diagramme/allshared_changei.pdf, page 5>
+Package pdftex.def Info: ../Diagramme/allshared_changei.pdf , page5 used on inp
+ut line 177.
+(pdftex.def)             Requested size: 404.71254pt x 404.71254pt.
+
+Overfull \hbox (59.71254pt too wide) in paragraph at lines 177--178
+[][] 
+ []
+
+<../Diagramme/sharedatomic_chagei.pdf, id=47, page=8, 505.89pt x 505.89pt>
+File: ../Diagramme/sharedatomic_chagei.pdf Graphic file (type pdf)
+<use ../Diagramme/sharedatomic_chagei.pdf, page 8>
+Package pdftex.def Info: ../Diagramme/sharedatomic_chagei.pdf , page8 used on i
+nput line 185.
+(pdftex.def)             Requested size: 404.71254pt x 404.71254pt.
+
+Overfull \hbox (59.71254pt too wide) in paragraph at lines 185--186
+[][] 
+ []
+
+<../Diagramme/sharedatomic_chagei.pdf, id=48, page=2, 505.89pt x 505.89pt>
+File: ../Diagramme/sharedatomic_chagei.pdf Graphic file (type pdf)
+<use ../Diagramme/sharedatomic_chagei.pdf, page 2>
+Package pdftex.def Info: ../Diagramme/sharedatomic_chagei.pdf , page2 used on i
+nput line 192.
+(pdftex.def)             Requested size: 404.71254pt x 404.71254pt.
+
+Overfull \hbox (59.71254pt too wide) in paragraph at lines 192--193
+[][] 
+ []
+
+<../Diagramme/sharedatomic_chagei.pdf, id=49, page=5, 505.89pt x 505.89pt>
+File: ../Diagramme/sharedatomic_chagei.pdf Graphic file (type pdf)
+<use ../Diagramme/sharedatomic_chagei.pdf, page 5>
+Package pdftex.def Info: ../Diagramme/sharedatomic_chagei.pdf , page5 used on i
+nput line 199.
+(pdftex.def)             Requested size: 404.71254pt x 404.71254pt.
+
+Overfull \hbox (59.71254pt too wide) in paragraph at lines 199--200
+[][] 
+ []
+
+<../Diagramme/onlyatomic_changei.pdf, id=50, page=8, 505.89pt x 505.89pt>
+File: ../Diagramme/onlyatomic_changei.pdf Graphic file (type pdf)
+<use ../Diagramme/onlyatomic_changei.pdf, page 8>
+Package pdftex.def Info: ../Diagramme/onlyatomic_changei.pdf , page8 used on in
+put line 206.
+(pdftex.def)             Requested size: 404.71254pt x 404.71254pt.
+
+Overfull \hbox (59.71254pt too wide) in paragraph at lines 206--207
+[][] 
+ []
+
+<../Diagramme/onlyatomic_changei.pdf, id=51, page=2, 505.89pt x 505.89pt>
+File: ../Diagramme/onlyatomic_changei.pdf Graphic file (type pdf)
+<use ../Diagramme/onlyatomic_changei.pdf, page 2>
+Package pdftex.def Info: ../Diagramme/onlyatomic_changei.pdf , page2 used on in
+put line 213.
+(pdftex.def)             Requested size: 404.71254pt x 404.71254pt.
+
+Overfull \hbox (59.71254pt too wide) in paragraph at lines 213--214
+[][] 
+ []
+
+<../Diagramme/onlyatomic_changei.pdf, id=52, page=5, 505.89pt x 505.89pt>
+File: ../Diagramme/onlyatomic_changei.pdf Graphic file (type pdf)
+<use ../Diagramme/onlyatomic_changei.pdf, page 5>
+Package pdftex.def Info: ../Diagramme/onlyatomic_changei.pdf , page5 used on in
+put line 220.
+(pdftex.def)             Requested size: 404.71254pt x 404.71254pt.
+
+Overfull \hbox (59.71254pt too wide) in paragraph at lines 220--221
+[][] 
+ []
+
+
+Overfull \hbox (18.24463pt too wide) in paragraph at lines 232--233
+\T1/cmr/m/n/10 Bei der Ver-wen-dung des Ker-nel1 ist die P100 deut-lich schnell
+er als die RTX2070super
+ []
+
+[8] [9 <../Diagramme/allshared_changei.pdf>] [10 <../Diagramme/allshared_change
+i.pdf>] [11 <../Diagramme/allshared_changei.pdf>] [12 <../Diagramme/sharedatomi
+c_chagei.pdf>] [13 <../Diagramme/sharedatomic_chagei.pdf>] [14 <../Diagramme/sh
+aredatomic_chagei.pdf>] [15 <../Diagramme/onlyatomic_changei.pdf>] [16 <../Diag
+ramme/onlyatomic_changei.pdf>] [17 <../Diagramme/onlyatomic_changei.pdf>]
+Overfull \hbox (11.91605pt too wide) in paragraph at lines 252--253
 [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.71844pt too wide) in paragraph at lines 141--142
+Overfull \hbox (1.71844pt too wide) in paragraph at lines 253--254
 [][][][][][][][][][] 
  []
 
-[8]
-Overfull \hbox (9.77448pt too wide) in paragraph at lines 152--155
-\T1/cmr/m/n/10 auf-grund der ho-hen An-zahl an Cuda Cores enorme Per-for-mance 
-Vorteile gegenüber
- []
-
-[9]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.159 	 -https://en.wikichip.org/wiki/amd/ryzen_
-                                                9/3900x
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.160 \end{document}
-                    
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (71.92596pt too wide) in paragraph at lines 157--160
+[18] [19]
+Overfull \hbox (71.92596pt too wide) in paragraph at lines 270--273
 \T1/cmr/m/n/10 - https://www.nvidia.de/gtx-700-graphics-cards/gtx-780/ -https:/
 /www.computerbase.de/2016-
  []
 
-
-Overfull \hbox (2.8595pt too wide) in paragraph at lines 157--160
-\T1/cmr/m/n/10 04/nvidia-tesla-p100-gp100-als-grosser-pascal-soll-all-in-fuer-h
-pc-markt-gehen/ -
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+[] \T1/cmr/m/it/10 https://www.computerbase.de/2016-04/nvidia-tesla-p100-gp100-
+als-
  []
 
-[10] (./GPU_projekt.aux) ) 
+[21] (./GPU_projekt.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5820 strings out of 483183
- 76985 string characters out of 5966292
- 505089 words of memory out of 5000000
- 20760 multiletter control sequences out of 15000+600000
- 543278 words of font info for 44 fonts, out of 8000000 for 9000
+ 5917 strings out of 483183
+ 79499 string characters out of 5966292
+ 508089 words of memory out of 5000000
+ 20849 multiletter control sequences out of 15000+600000
+ 545363 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,9n,60p,1527b,1126s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecbx0800.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfo
-ur/jknappen/ec/ecrm0800.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/lj
-four/jknappen/ec/ecbx1200.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/
-ljfour/jknappen/ec/ecbx1000.600pk> </home/daniel/.texlive2019/texmf-var/fonts/p
-k/ljfour/jknappen/ec/ecbx1440.600pk> </home/daniel/.texlive2019/texmf-var/fonts
-/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/daniel/.texlive2019/texmf-var/fon
-ts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/daniel/.texlive2019/texmf-var/f
-onts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on GPU_projekt.pdf (10 pages, 172438 bytes).
+ 37i,9n,60p,1498b,1126s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.60
+0pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcti0800.
+600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti080
+0.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0
+800.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
+x0800.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/e
+crm0800.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecbx1200.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecbx1000.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecbx1440.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecrm1000.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ecrm1200.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on GPU_projekt.pdf (21 pages, 231987 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 560 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
