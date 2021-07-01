@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.24)  1 JUL 2021 01:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.24)  1 JUL 2021 14:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,54 +293,117 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write3
 \openout3 = `GPU_projekt.toc'.
 
- [2] [3] [4]
+ [2]
+Overfull \hbox (0.76279pt too wide) in paragraph at lines 60--72
+\T1/cmr/m/n/10 Damit liefert jeder thread-block als Zwis-ch-en-ergeb-nis ein Sp
+al-tenvek-tor der Gröÿe
+ []
+
+
+Overfull \hbox (10.38544pt too wide) in paragraph at lines 60--72
+\T1/cmr/m/n/10 blöcke in gle-icher Rei-hen-folge in buff un-tere-inan-der, die 
+Ergeb-nisse der nebeneinan-
+ []
+
+[3] [4]
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.89 ...kt GHz}  & \textbf{theo. SP. Performace} &
+l.90 ...kt GHz}  & \textbf{theo. SP. Performace} &
                                                   \\
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
 
-Overfull \hbox (6.58704pt too wide) in paragraph at lines 86--94
+Overfull \hbox (6.58704pt too wide) in paragraph at lines 87--95
  [] 
  []
 
-[5] [6]
-Overfull \hbox (71.92596pt too wide) in paragraph at lines 119--121
+
+Overfull \hbox (2.41516pt too wide) in paragraph at lines 102--110
+\T1/cmr/m/n/10 ver-schiedene threads auf die sel-ben Spe-icherzellen schreiben,
+ welche keinen geteil-
+ []
+
+
+Overfull \hbox (5.37741pt too wide) in paragraph at lines 102--110
+\T1/cmr/m/n/10 ten Spe-icher en-thal-ten. Dies hat zur Folge, dass die entsprec
+hen-den Spe-icherzellen
+ []
+
+[5] [6] [7]
+Overfull \hbox (11.91605pt too wide) in paragraph at lines 132--133
+[][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.71844pt too wide) in paragraph at lines 133--134
+[][][][][][][][][][] 
+ []
+
+[8]
+Overfull \hbox (9.77448pt too wide) in paragraph at lines 144--147
+\T1/cmr/m/n/10 auf-grund der ho-hen An-zahl an Cuda Cores enorme Per-for-mance 
+Vorteile gegenüber
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.151 	 -https://en.wikichip.org/wiki/amd/ryzen_
+                                                9/3900x
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.152 \end{document}
+                    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (71.92596pt too wide) in paragraph at lines 149--152
 \T1/cmr/m/n/10 - https://www.nvidia.de/gtx-700-graphics-cards/gtx-780/ -https:/
 /www.computerbase.de/2016-
  []
 
-[7] (./GPU_projekt.aux) ) 
+
+Overfull \hbox (2.8595pt too wide) in paragraph at lines 149--152
+\T1/cmr/m/n/10 04/nvidia-tesla-p100-gp100-als-grosser-pascal-soll-all-in-fuer-h
+pc-markt-gehen/ -
+ []
+
+[9] (./GPU_projekt.aux) ) 
 Here is how much of TeX's memory you used:
- 5429 strings out of 483183
- 73442 string characters out of 5966292
- 504089 words of memory out of 5000000
- 20371 multiletter control sequences out of 15000+600000
- 541738 words of font info for 42 fonts, out of 8000000 for 9000
+ 5803 strings out of 483183
+ 76742 string characters out of 5966292
+ 505089 words of memory out of 5000000
+ 20744 multiletter control sequences out of 15000+600000
+ 542502 words of font info for 43 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,9n,60p,1494b,222s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,9n,60p,1527b,1126s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/
-jknappen/ec/ecbx1200.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfou
-r/jknappen/ec/ecbx1000.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljf
-our/jknappen/ec/ecbx1440.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/l
-jfour/jknappen/ec/ecrm1000.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk
-/ljfour/jknappen/ec/ecrm1200.600pk> </home/daniel/.texlive2019/texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on GPU_projekt.pdf (7 pages, 146376 bytes).
+jknappen/ec/ecrm0800.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ecbx1200.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecbx1000.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecbx1440.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk
+/ljfour/jknappen/ec/ecrm1000.600pk> </home/daniel/.texlive2019/texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/daniel/.texlive2019/texmf-var/font
+s/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on GPU_projekt.pdf (9 pages, 166795 bytes).
 PDF statistics:
- 307 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 362 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
