@@ -138,7 +138,7 @@ int main(int argc, char**argv)
 		}
 	}
     grid.y=1;
-    grid.x=(int)ceilf(numBlocksPerSm);
+   
     if(size % block.x !=0)
     	grid.x++;
 	
@@ -150,7 +150,8 @@ int main(int argc, char**argv)
     int numBlocksPerSm;
     
     cudaOccupancyMaxActiveBlocksPerMultiprocessor(&numBlocksPerSm,kernel,sx,0);
-    
+    grid.x=(int)ceilf(numBlocksPerSm);
+
     //Argumente welche dem Kernel übergeben werden müssen vorher definiert werden und in eine Variable arg gepseichert werden
     void *args[]={(void *)&a_dev,(void*)&x_dev,(void*)&buff_dev,(void*)&size,(void*)&numBlocksPerSm};
     
