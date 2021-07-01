@@ -1,50 +1,28 @@
-#include <cuda.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
 #include <iostream>
-#include <cooperative_groups.h>
-
-using namespace cooperative_groups;
-namespace cg=cooperative_groups;
+#include<chrono>
+using std::chrono::system_clock;
+using std::chrono::duration;
 
 #define DTYPE float
 
-__global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* buff,int size, int numberBlocks){
-    
-    grid_group grid=this_grid();
-
-    __shared__ DTYPE sm[1024];
-
-    int lx=size/blockDim.x;
-    if(size % blockDim.x != 0)
-    	lx++;    
-    int ly=size/(numberBlocks*blockDim.y);
-    if(size % numberBlocks*blockDim.y != 0);
-    	ly++;        
-    for(int g=0;g<lx;g++){
-        for(int h=0;h<ly;h++){
-            int i=threadIdx.x+g*blockDim.x;
-            int j=threadIdx.y+blockIdx.y*blockDim.y+h*blockDim.y*numberBlocks;
-            if(i<size && j<size){
-                sm[threadIdx.x+threadIdx.y*blockDim.x]=a[i+j*size]*x[i];
-                __syncthreads();
-                for (int k=blockDim.x/2;k>0;k/=2){
-                    if (threadIdx.x<k)
-                    sm[threadIdx.x+threadIdx.y*blockDim.x]+=sm[threadIdx.x+k+threadIdx.y*blockDim.x];
-                    __syncthreads();
-                }
-                if (threadIdx.x==0){
-                    buff[j]+=sm[threadIdx.y*blockDim.x];
-                }
-            }
-        }
-        grid.sync();                
-     }
+void matvec(float *a, float* x, float *b, int size, int blocksize)
+{
+   if(size%blocksize==0){
+      int iblocks=size/blocksize;//Zeilenteilmatrix
+      int jblocks=size/blocksize;//Spaltenteilmatrizen
+      for(int ii=0;ii<size;ii+=blocksize)
+         for(int jj=0;jj<size;jj+=blocksize)
+            for(int i=ii;i<ii+blocksize;i++)
+               for(int j=jj;j<jj+blocksize;j++)
+                  b[j]+=a[i+size*j]*x[i];
+   }
+   else std::cout<<"Blocksize passt nicht zur Matrixgröße"<<std::endl;
 }
-
-
 void fillA(DTYPE *a, int size)
 {
    for (int i=0;i<size*size;i++)
@@ -56,6 +34,14 @@ void fillX(DTYPE *x, int size)
 {
    for (int i=0;i<size;i++){
 	x[i]=1;
+//      x[i]= (DTYPE)(i+1);
+	}
+}
+
+void fillb(DTYPE *x, int size)
+{
+   for (int i=0;i<size;i++){
+	x[i]=0;
 //      x[i]= (DTYPE)(i+1);
 	}
 }
@@ -84,14 +70,18 @@ int main(int argc, char**argv)
    	std::cout<<"Do experiment with individual settings"<<std::endl;
    	std::cout<<"Sx="<<sx<<"\n Sy="<<sy<<"\n Size=1024*"<<i<<std::endl;
        }
+   /*if(sx*sy!=t){
+   	std::cout<<"Sx*Sy has to be equal to threads per block"<<std::endl;
+   	return -1;
+   }*/
    int size=1024*i;
    int xblocks=size/sx;
    //Datenfelder anlegen für Host
    DTYPE *a_host, *buff_host, *x_host;
    //und Device
-   DTYPE *a_dev, *buff_dev,*x_dev;
+   //DTYPE *a_dev, *buff_dev,*x_dev;
    //Events für die Zeitmessung
-   cudaEvent_t start,end;
+   //cudaEvent_t start,end;
    //Zeiten: 
    float kernelA_time=0.0;
 
@@ -102,18 +92,33 @@ int main(int argc, char**argv)
 
    fillA(a_host,size);
    fillX(x_host,size);
+   fillb(buff_host,size);
+   
+   auto start = system_clock::now();
+   matvec(a_host,x_host, buff_host, size, sx);
+   auto end= system_clock::now();
+   const double elapsed_seconds = duration<double>(end-start).count();
+   std::cout<< elapsed_seconds<<std::endl;
+   
+   for(int lj=0;lj<10;lj++){
+   		std::cout<<buff_host[lj]<<std::endl;
+    } 
+
+   std::cout<<"Computation time: "<<elapsed_seconds<<std::endl;  
+	float gflops=pow(10,-9)*size*size*2/elapsed_seconds;
+   std::cout<<"Computation Performance in GFLOPs: "<<gflops<<std::endl;
    //TODO: CUDA Events erstellen
 
    //TODO: CUDA Speicher anlegen für alle Arrays (a_dev,x_dev,y_dev)
-   cudaMalloc((void**)&a_dev,size*size*sizeof(DTYPE));
+   /*cudaMalloc((void**)&a_dev,size*size*sizeof(DTYPE));
    cudaMalloc((void**)&x_dev,size*sizeof(DTYPE));
    cudaMalloc((void**)&buff_dev,size*sizeof(DTYPE));
-
+*/
    //TODO: Host->Device Memcpy von A und x + Zeitmessung
    //cudaMemcpy(a_dev,a_host,1*sizeof(DTYPE),cudaMemcpyHostToDevice);
    //cudaMemcpy(x_dev,x_host,1*sizeof(DTYPE),cudaMemcpyHostToDevice);
 
-   cudaMemcpy(a_dev,a_host,size*size*sizeof(DTYPE),cudaMemcpyHostToDevice);
+  /* cudaMemcpy(a_dev,a_host,size*size*sizeof(DTYPE),cudaMemcpyHostToDevice);
    cudaMemcpy(x_dev,x_host,size*sizeof(DTYPE),cudaMemcpyHostToDevice);
    
    dim3 block(sx,sy);
@@ -132,41 +137,25 @@ int main(int argc, char**argv)
 			cudaFuncSetCacheConfig(kernel, cudaFuncCachePreferNone);
 		}
 	}
-    grid.x=1;
-    grid.y=size/block.y;
-    if(size % block.y !=0)
-    	grid.y++;
-	
-    int dev=0;
-    cudaGetDevice(&dev);
-    cudaDeviceProp deviceProp;
-    cudaGetDeviceProperties(&deviceProp, dev);
-
-    int numBlocksPerSm;
-    
-    cudaOccupancyMaxActiveBlocksPerMultiprocessor(&numBlocksPerSm,kernel,sx,0);
-
-    void *args[]={(void *)&a_dev,(void*)&x_dev,(void*)&buff_dev,(void*)&size,(void*)&numBlocksPerSm};
-    grid.y=(int)ceilf(numBlocksPerSm);
 	
    //TODO: kernelAx ausführen und Zeit messen
    cudaEventCreate(&start);
    cudaEventCreate(&end);
    cudaEventRecord(start,0);
-   cudaLaunchCooperativeKernel((void*)kernel,grid,block,args,numBlocksPerSm); 
-   cudaDeviceSynchronize();
+   kernel<<<grid,block>>>(a_dev,x_dev,buff_dev,xblocks,size);
    cudaEventRecord(end,0);
    cudaEventSynchronize(end);
    cudaEventElapsedTime(&kernelA_time,start,end);
 
    if(argc>5){
     cudaMemcpy(buff_host,buff_dev,size*sizeof(DTYPE),cudaMemcpyDeviceToHost);
-    for(int lj=size-10;lj<size;lj++){
+    for(int lj=0;lj<10;lj++){
    		std::cout<<buff_host[lj]<<std::endl;
     } 
    }
+   
    std::cout<<"Computation time: "<<kernelA_time<<std::endl;  
 	float gflops=pow(10,-6)*size*size*2/kernelA_time;
-   std::cout<<"Computation Performance in GFLOPs: "<<gflops<<std::endl;
+   std::cout<<"Computation Performance in GFLOPs: "<<gflops<<std::endl;*/
    return 0;
 }

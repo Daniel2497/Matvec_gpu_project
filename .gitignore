@@ -2,5 +2,6 @@ shellscripts/onlyshared
 shellscripts/onlyatomic
 shellscripts/sharedatomic
 shellscripts/shuffle
+shellscripts/slurm*
 shellscripts/intragrid
 shellscripts/myintragrid
