@@ -40,10 +40,7 @@ __global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* buff,int size, int numberBlock
 			atomicAdd(&buff[j],sm[threadIdx.y*blockDim.x]);
                     //buff[j]+=sm[threadIdx.y*blockDim.x];
                 }
-		__syncthreads();
-		grid.sync();
             }
-		grid.sync();
         }
         grid.sync();                
      }
