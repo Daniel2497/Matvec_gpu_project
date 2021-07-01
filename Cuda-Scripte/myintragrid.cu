@@ -27,7 +27,7 @@ __global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* buff,int size, int numberBlock
     for(int h=0;h<ly;h++){
     	for(int g=0;g<lx;g++){
             int i=threadIdx.x+blockIdx.x*blockDim.x+g*blockDim.x*numberBlocks;
-            int j=threadIdx.y+h*blockDim.y;
+	int j=threadIdx.y+h*blockDim.y;
             if(i<size && j<size){
                 sm[threadIdx.x+threadIdx.y*blockDim.x]=a[i+j*size]*x[i];
                 __syncthreads();
@@ -37,9 +37,13 @@ __global__ void kernel(DTYPE *a, DTYPE *x, DTYPE* buff,int size, int numberBlock
                     __syncthreads();
                 }
                 if (threadIdx.x==0){
-                    buff[j]+=sm[threadIdx.y*blockDim.x];
+			atomicAdd(&buff[j],sm[threadIdx.y*blockDim.x]);
+                    //buff[j]+=sm[threadIdx.y*blockDim.x];
                 }
+		__syncthreads();
+		grid.sync();
             }
+		grid.sync();
         }
         grid.sync();                
      }
@@ -162,10 +166,11 @@ int main(int argc, char**argv)
 
    if(argc>5){
     cudaMemcpy(buff_host,buff_dev,size*sizeof(DTYPE),cudaMemcpyDeviceToHost);
-    for(int lj=size10;lj<size;lj++){
+    for(int lj=size-10;lj<size;lj++){
    		std::cout<<buff_host[lj]<<std::endl;
     } 
    }
+	std::cout<<"Numberblocks"<<numBlocksPerSm<<std::endl;
    std::cout<<"Computation time: "<<kernelA_time<<std::endl;  
 	float gflops=pow(10,-6)*size*size*2/kernelA_time;
    std::cout<<"Computation Performance in GFLOPs: "<<gflops<<std::endl;
