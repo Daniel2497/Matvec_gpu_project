@@ -4,3 +4,13 @@
 \contentsline {subsection}{\numberline {2.2}Sharedmemory mit Atomics}{4}%
 \contentsline {subsection}{\numberline {2.3}Nur Atomic Operationen}{5}%
 \contentsline {subsection}{\numberline {2.4}Intra grid Groups}{5}%
+\contentsline {subsection}{\numberline {2.5}Shuffle}{5}%
+\contentsline {section}{\numberline {3}Performance}{5}%
+\contentsline {subsection}{\numberline {3.1}Verwendete Grafikkarten}{5}%
+\contentsline {subsection}{\numberline {3.2}Vergleich der Algorithmen}{5}%
+\contentsline {subsubsection}{\numberline {3.2.1}Sharedmemory Methode}{6}%
+\contentsline {subsubsection}{\numberline {3.2.2}Shared plus Atomic}{6}%
+\contentsline {subsection}{\numberline {3.3}Atomic Operationen}{6}%
+\contentsline {subsection}{\numberline {3.4}Differenz zur theoretischen Peak Performance}{6}%
+\contentsline {subsection}{\numberline {3.5}Performance Vergleich CPU}{7}%
+\contentsline {section}{\numberline {4}Quellen}{7}%

@@ -1,0 +1,20 @@
+plot(ylim=c(0,max(c(sharedatomicgpu780[Indsx16C2],
+allsharedgpu780[Indsx16C2]))*1.25),x=1:5,typ="n",xaxt="n",xlab="n",
+ylab="Performance GFlops",main="GTX780, Vergleich der Algortihmen,Sx=8\n Performance mit Veränderung der Problemgröße,
+ shared Memory prefered")
+
+axis(1,at=1:5,labels=2^(0:4))
+
+legend(1,max(c(sharedatomicgpu780[Indsx16C2],allsharedgpu780[Indsx16C2]))*1.25,
+legend=c("sharedatomic","allshared","onlyatomicgpu780"), col=c("red","blue","green"),lty="solid")
+
+
+points(y=sharedatomicgpu780[Indsx16C2],x=1:5,col="red",pch=5)
+points(y=allsharedgpu780[Indsx16C2],x=1:5,col="blue",pch=5)
+points(y=onlyatomicgpu780[Indsx16C2],x=1:5,col="orange",pch=5)
+
+
+lines(y=sharedatomicgpu780[Indsx16C2],x=1:5,col="red",pch=5)
+lines(y=allsharedgpu780[Indsx16C2],x=1:5,col="blue",pch=5)
+lines(y=onlyatomicgpu780[Indsx16C2],x=1:5,col="orange",pch=5)
+

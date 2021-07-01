@@ -146,16 +146,11 @@ int main(int argc, char**argv)
    	toreduce=toreduce/sx+1;
    while(toreduce>1){//toreduce=1 bedeut, dass auf einen Wert reduziert wurde und somit keine weitere Reduzierung notwendig ist
    	int xgrid;
-   	int ygrid;
+   	int ygrid=size/sy;
    	if(toreduce%sx==0)
    		xgrid=toreduce/sx;
    	else
 	   	xgrid=toreduce/sx+1;
-   	
-   	if(toreduce%sx==0)
-   		ygrid=toreduce/sx;
-   	else
-   		xgrid=toreduce/sx+1;   
    	dim3 itgrid(xgrid,ygrid);
    	kernel<<<itgrid,block>>>(a_dev,x_dev,buff_dev,xblocks,size,doComputation,toreduce);//,y_dev,size);
    	if(toreduce%sx==0)

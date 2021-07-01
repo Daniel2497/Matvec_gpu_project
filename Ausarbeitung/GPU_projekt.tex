@@ -73,4 +73,49 @@
 	 \subsection{Nur Atomic Operationen}
 	 Ähnlich wie in den anderen Methoden bekommt hier wieder jedem Eintrag aus der Matrix $A$ genau ein thread zugeordnet, der das Produkt mit der entsprechenden Vektor Komponente ermittelt. Das Produkt, speichert der thread in eine lokale Variable addsc ab. Es wurde vorher ein Speicher buff angelegt, welcher soviele Einträge hat, wie die Matrix $A$ Zeilen. Threads, welche das Produkt mittel des Matrixeintrag aus der gleichen Spalten errechnet haben addieren ihr Ergebnis jetzt auf den entsprechenden Eintrag in der variablen buff auf, sodass buff am Ende ein Spaltenvektor, welcher dem Matrix-Vektor Produkt entspricht liefert.
 	 \subsection{Intra grid Groups}  
+	 
+	 \subsection{Shuffle}
+	 Eine weitere Methode zur Lösung des Problems ist die Verwendung von shuffle Operationen. Diese Bedarf aber einiges mehr an Implementierungsaufwand und wird daher in dieser Stelle nicht näher erläutert. Jedoch ist diese Methode deutliche performanter auf Grafikkarten als die bisher gezeigt sodass ich sie nicht unerwähnt lassen möchte.
+
+	 \section{Performance}
+	 \subsection{Verwendete Grafikkarten}
+	 Für die Performancemessungen der Algorithmen wurden die Grafikkarten des Lehrstuhls Nvidia GTX780, Nvidia RTX2070 und der das Ara-Clusters Nvidia P100 verwendet. Alle Berechnung wurden mit Daten des Datentyp floats, also in Single Precision ausgeführt.\\
+	 Die Angaben zur theoretischen Performance in Table \ref{GPU Daten} der GTX780, P100 sind Herrstellerangaben. Die theoretische Performance der RTX2070super errechnet sich durch: $$\text{SP Performance}= \text{fma}\cdot \# \{\text{Cuda Cores}\} \text{Takt}\\
+	 =2\cdot 2560*1,61 Ghz\\
+	 =8243 GFlops$$
+	 \begin{table}{H}
+	 	\centering
+	 	\begin{tabular}{llll}
+	 		\textbf{Model}  & \textbf{cuda Cores} & \textbf{Takt GHz}  & \textbf{theo. SP. Performace} &\\
+	 		GTX780           & 2304       & 0,87 (9 Boost) & 3976 GFlops   \\
+	 		P100       & 3584 & 1,33 (1,48 Boost) &9400     GFlops        \\
+	 		RTX2070super        & 2560 & 1,61 (1,77 Boost) &   8243 GFlops         \\
+	 	\end{tabular}
+	 	
+	 	\caption{GPU Daten}
+	 	\label{GPU Daten}
+	 	% Verweis im Text mittels \ref{tbl:beispieltabelle}
+	 	
+	 \end{table}
+	 \subsection{Vergleich der Algorithmen}
+	 Auf alle Grafikkarten ist die Methode, welche nur Atomic Operationen zur Reduktion benutzt die langsamste. Bei Verwendung der Atomic Operation müssen verschiedene threads auf die selben Speicherzellen schreiben, welche keinen geteilten Speicher enthalten. Dies hat zur Folge, dass die entsprechenden Speicherzellen immer wieder neu von threads geladen und beschrieben werden müssen während des die Anderen threads warten müssen, bis sie auf den Speicher zugreifen können.\\
+	 Die Methode mit intragrids ...
+	 Interessant zu beobachten ist, dass auf der GTX780 und der RTX2070super die Methode der Shared Memory Reduktion innerhalb des threads blocks, Atomic Operationen zwischen den threads Blocks meist ähnlich schnell bzw. etwas schneller war als die Reduktion nur über shared Memory Operationen. Auf der P100 hingegen ist die Methode nur mit shared Memory Operationen hingegen deutlich schneller. Ein Mögliche Erklärung hierbei findet sich anhand der Hardwarespezifikationen. Die P100 hat deutlich mehr Cuda Cores als die GTX780, RTX2070super, wodurch sie mehr Thread Blöcke gleichzeitig starten kann, was ihr bei der Ausführung von viele thread Blöcke, also auch beim wiederaufruf des Kernels zu Gute kommt. Die RTX2070super ist zudem höher getaktet als die P100, was ihr bei den Atomic Operationen hilft. Jedoch lässt es sich nicht allein auf dieses Argument herunterbrechen, da die GTX780 deutlich niedriger Taktet als die anderen beiden GPUs.\\
+	 Die schnellst Methode findet sich jedoch im Algorithmus mit shuffle Operationen, welcher nochmal eine bis zu drei mal bessere Performance liefert.
+	 \subsection*{Vergleich der Grafikkarten}
+	  \subsubsection{Sharedmemory Methode}
+	  Bei der Verwendung der Methode mit Shared Memory ist die P100 deutlich schneller als die RTX2070super und die GTX780. Hierbei wird vor allem die größere Anzahl an Cuda Cores ihr helfen, da somit mehr thread Blöck gleichzeitig ausgeführt werden können.
+	  \subsubsection{Shared plus Atomic}
+	  \subsection{Atomic Operationen}
+	  Hier hat die RTX2070super deutlich schneller als die anderen beiden GPUs. Der schnellere Takt wird einen großen Einfluss dabei gespielt haben.
+	  \subsection{Differenz zur theoretischen Peak Performance}
+	  Bei allen Algorithmen und allen GPUs ist die erreicht Performance weit von der theoretischen Peak Performance entfernt. So erreicht man mit der P100 im shuffle Algorithmus maximal 240 GFlops, mit Shared Memory maximal 70 Gflops, was nur ein hundertstel der theoretischen Peakperformance von 9400 Gflops entspricht. Die Differenz bei der RTX2070super und der GTX780 liegt in einer ähnlichen Größenordnung. Ein Grund hierfür ist, dass die geladenen Matrixeinträge der Ursprungsmatrix $A$ nur einmal zur Berechnung benutzt werden und auch bei Grafikkarten die Recheneinheiten deutlich mehr Daten verarbeiten könnten, als die Speichereinheiten Daten liefern können. Bei einer Matrix-Matrix-Multiplikation müssen die Daten der Ursprungsmatrix deutlich häufiger verwendet werden als bei einer Matrix-Vektor-Multiplikation, da für $C+=AB$ jede Zeile von Matrix $A$ mit jeder Spalte aus Matrix B multipliziert wird. Somit bin ich in Hausaufgabe 3, der Matrix-Matrix-Multiplikation auf knapp 600 GFlops gekommen. Dies entspricht der dreifachen Performance der Implemtierung des shuffle Algorithmus, und sogar der 12-fachen Performance der Implemtierung von Kernel 1.2(48 GFLOps) und der 18 fachen Performance der Implemtierung von Kernel 1.1 (33 Gflops).
+	  \subsection{Performance Vergleich CPU}
+	  Ein Single Core CPU Implementation das Matrix-Vektor-Produktes, bei der die Matrix in Teilmatrizen aufgeteilt war für effektiver Transfer bezüglich Cache Lines, hat auf meinem System, mit AMD Ryzen 5 3600 eine Performance zwischen 0,1 und 3 Gflops erreicht. Besonders bei großer Problemgröße war diese sehr langsam. So hat sie für das Matrix-Vektorprodukt mit Dimension 16*1024 Werte zwischen 0,01 und 0,42 GFLOPS, je nach Größe der Teilmatrix.\\ 
+	  Vor der Krise bezüglich der Verfügbarkeit von Grafikkarten hat man für ungefähr den gleichen Preis ein Nvidia RTX2070 super oder einen AMD Ryzen 9 3900X bekommen. Letzterer ist eine 12-core CPU mit einer vergleichbaren single core performance zum AMD Ryzen 5 3600. \\
+	  Geht man von einer Perfekten Parallelisierung das Programms auf 12 Kerne aus und dem Idealfall in der Singlecore Impletmentierung von 0,42 GFlops, so erhält man mit dem Ryzen 9 3900X eine Performance von $0,42GFlops*12=5,04 GFlops$. Dies wäre um ein Faktor 9 schlechter, als die Performance des Matrix Vektor Produkts Kernel 1.2 auf der RTX2070super, sx=8, size=16*1024, und sogar um ein Faktor 35 schlechter als der shuffle Algorithmus auf der RTX2070super (185 Gflops) für size=16*1024. Anhand dieses Beispiels sieht man also gut, warum für Berechnungen von großen Matrix-Matrix oder Matrix-Vektorprodukten Grafikkarten anstatt CPUs verwendet werden.
+	  
+	 \section{Quellen} 
+	 - https://www.nvidia.de/gtx-700-graphics-cards/gtx-780/
+	 -https://www.computerbase.de/2016-04/nvidia-tesla-p100-gp100-als-grosser-pascal-soll-all-in-fuer-hpc-markt-gehen/
 \end{document}

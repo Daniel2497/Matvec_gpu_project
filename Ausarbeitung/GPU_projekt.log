@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.24)  30 JUN 2021 19:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.24)  1 JUL 2021 01:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -294,15 +294,35 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout3 = `GPU_projekt.toc'.
 
  [2] [3] [4]
-[5] (./GPU_projekt.aux) ) 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.89 ...kt GHz}  & \textbf{theo. SP. Performace} &
+                                                  \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (6.58704pt too wide) in paragraph at lines 86--94
+ [] 
+ []
+
+[5] [6]
+Overfull \hbox (71.92596pt too wide) in paragraph at lines 119--121
+\T1/cmr/m/n/10 - https://www.nvidia.de/gtx-700-graphics-cards/gtx-780/ -https:/
+/www.computerbase.de/2016-
+ []
+
+[7] (./GPU_projekt.aux) ) 
 Here is how much of TeX's memory you used:
- 5424 strings out of 483183
- 73391 string characters out of 5966292
+ 5429 strings out of 483183
+ 73442 string characters out of 5966292
  504089 words of memory out of 5000000
- 20368 multiletter control sequences out of 15000+600000
- 540204 words of font info for 40 fonts, out of 8000000 for 9000
+ 20371 multiletter control sequences out of 15000+600000
+ 541738 words of font info for 42 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,6n,60p,1494b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,9n,60p,1494b,222s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/
 jknappen/ec/ecbx1200.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfou
 r/jknappen/ec/ecbx1000.600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljf
@@ -317,10 +337,10 @@ onts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on GPU_projekt.pdf (5 pages, 123481 bytes).
+Output written on GPU_projekt.pdf (7 pages, 146376 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 307 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
