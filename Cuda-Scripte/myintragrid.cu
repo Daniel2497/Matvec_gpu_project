@@ -148,7 +148,7 @@ int main(int argc, char**argv)
     cudaOccupancyMaxActiveBlocksPerMultiprocessor(&numBlocksPerSm,kernel,sx,0);
 
     void *args[]={(void *)&a_dev,(void*)&x_dev,(void*)&buff_dev,(void*)&size,(void*)&numBlocksPerSm};
-    grid.y=(int)ceilf(numBlocksPerSm);
+    grid.x=(int)ceilf(numBlocksPerSm);
 	
    //TODO: kernelAx ausführen und Zeit messen
    cudaEventCreate(&start);
@@ -162,7 +162,7 @@ int main(int argc, char**argv)
 
    if(argc>5){
     cudaMemcpy(buff_host,buff_dev,size*sizeof(DTYPE),cudaMemcpyDeviceToHost);
-    for(int lj=size-10;lj<size;lj++){
+    for(int lj=size10;lj<size;lj++){
    		std::cout<<buff_host[lj]<<std::endl;
     } 
    }
