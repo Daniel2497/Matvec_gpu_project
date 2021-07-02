@@ -165,9 +165,10 @@ int main(int argc, char**argv)
    	cudaMemcpy(buff_host,buff_dev,xblocks*size*sizeof(DTYPE),cudaMemcpyDeviceToHost);
    	std::cout<<"Das Endergebnis ist"<<std::endl;
    	for(int lj=0;lj<10;lj++){
-   		for(int li=0;li<10;li++)
-   			std::cout<<buff_host[li+xblocks*lj]<<" ; ";
-   		std::cout<<std::endl;
+   		//for(int li=0;li<10;li++)
+   		//	std::cout<<buff_host[li+xblocks*lj]<<" ; ";
+   //   		std::cout<<std::endl;
+   		std::cout<<buff_host[xblocks*lj]<<std::endl;
    	}
    }
    std::cout<<"Computation time: "<<kernelA_time<<std::endl;

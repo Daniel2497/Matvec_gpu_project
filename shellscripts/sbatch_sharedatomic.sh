@@ -7,4 +7,4 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --ntasks=1
 #SBATCH --time=00:05:00
-./shared_atomic.sh
+./sharedatomic.sh
