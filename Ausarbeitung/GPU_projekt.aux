@@ -8,20 +8,20 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Shuffle}{6}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Performance}{6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Verwendete Grafikkarten}{6}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces GPU Daten}}{7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces GPU Spezifikationen}}{7}\protected@file@percent }
 \newlabel{GPU Daten}{{1}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Problemgröße}{7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Vergleich der Algorithmen}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Kernel 3}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Intragrids}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Kernel 1 und 2}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Shuffle}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Vergleich der Grafikkarten}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.8.1}Kernel1}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.8.2}Kernel 2}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.9}Atomic Operationen}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.10}Einfluss der Problemgröße}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.10.1}Kernel 1 und Kernel 2}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Kernel 3}{7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Intragrids}{7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Kernel 1 und 2}{7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Shuffle}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Vergleich der Grafikkarten}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Kernel1}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Kernel 2}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Atomic Operationen}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Einfluss der Problemgröße}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}Kernel 1 und Kernel 2}{8}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Ausführung Kernel 1, P100 }}{9}\protected@file@percent }
 \newlabel{Ausführung Kernel1, P100 }{{1}{9}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Ausführung Kernel 1, RTX2070super }}{10}\protected@file@percent }
@@ -40,15 +40,18 @@
 \newlabel{Ausführung Kernel3, RTX2070super }{{8}{16}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Ausführung Kernel 3, GTX780 }}{17}\protected@file@percent }
 \newlabel{Ausführung Kernel3, GTX780 }{{9}{17}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.10.2}Kernel 3}{18}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.11}Einfluss der Blockgröße}{18}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.12}Einfluss der Größe von Shared Memory/ L1 Memory}{18}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.13}Differenz zur theoretischen Peak Performance}{19}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.14}Performance Vergleich CPU}{19}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Fazit}{20}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Quellen}{20}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces P100, Vergleich Shuffle zu Kernel 1 }}{18}\protected@file@percent }
+\newlabel{Shuffle P100}{{10}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces RTX2070super, Vergleich Shuffle zu Kernel 2 }}{19}\protected@file@percent }
+\newlabel{Shuffle RTX2070super}{{11}{19}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.2}Kernel 3}{20}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Einfluss der Blockgröße}{20}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Einfluss der Größe von Shared Memory/ L1 Memory}{20}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Differenz zur theoretischen Peak Performance}{21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.9}Performance Vergleich CPU}{21}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Fazit}{22}\protected@file@percent }
 \bibcite{manuel}{1}
 \bibcite{manuel}{2}
 \bibcite{manuel}{3}
-\@writefile{toc}{\contentsline {chapter}{Quellenverzeichnis}{21}\protected@file@percent }
-\newlabel{P100 Performance}{{2}{21}}
+\@writefile{toc}{\contentsline {chapter}{Quellenverzeichnis}{23}\protected@file@percent }
+\newlabel{P100 Performance}{{2}{23}}

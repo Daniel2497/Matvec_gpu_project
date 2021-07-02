@@ -29,7 +29,7 @@ Indsx64C3<-1:5+70
 
 plot(ylim=c(0,max(c(allsharedgpu2070super[Indsx4C1],allsharedgpu2070super[Indsx8C1],allsharedgpu2070super[Indsx16C1],
 allsharedgpu2070super[Indsx32C1],allsharedgpu2070super[Indsx64C1]))*1.25),x=1:5,typ="n",xaxt="n",xlab="n",
-ylab="Performance GFlops",main="RTX2070super Sharedmemoryreduktion\n Performance mit Veränderung der Problemgröße \n  L1 prefered")
+ylab="Performance GFlops",main="RTX2070super, Kernel 1\n Performance mit Veränderung der Problemgröße \n  L1 prefered")
 
 axis(1,at=1:5,labels=2^(0:4))
 
@@ -54,7 +54,7 @@ lines(y=allsharedgpu2070super[Indsx64C1],x=1:5,col="magenta",pch=5)
 #Cacheconfig 2
 plot(ylim=c(0,max(c(allsharedgpu2070super[Indsx4C2],allsharedgpu2070super[Indsx8C2],allsharedgpu2070super[Indsx16C2],
 allsharedgpu2070super[Indsx32C2],allsharedgpu2070super[Indsx64C2]))*1.25),x=1:5,typ="n",xaxt="n",xlab="n",
-ylab="Performance GFlops",main="RTX2070super Sharedmemoryreduktion\n Performance mit Veränderung der Problemgröße \n  Shared Memory Prefered")
+ylab="Performance GFlops",main="RTX2070super, Kernel 1\n Performance mit Veränderung der Problemgröße \n  Shared Memory Prefered")
 
 axis(1,at=1:5,labels=2^(0:4))
 
@@ -78,7 +78,7 @@ lines(y=allsharedgpu2070super[Indsx64C2],x=1:5,col="magenta",pch=5)
 #Cacheconfig 3
 plot(ylim=c(0,max(c(allsharedgpu2070super[Indsx4C3],allsharedgpu2070super[Indsx8C3],allsharedgpu2070super[Indsx16C3],
 allsharedgpu2070super[Indsx32C3],allsharedgpu2070super[Indsx64C3]))*1.25),x=1:5,typ="n",xaxt="n",xlab="n",
-ylab="Performance GFlops",main="RTX2070super Sharedmemoryreduktion\n Performance mit Veränderung der Problemgröße \n  L1=shared Memory=32kB")
+ylab="Performance GFlops",main="RTX2070super, Kernel 1\n Performance mit Veränderung der Problemgröße \n  L1=shared Memory=32kB")
 
 axis(1,at=1:5,labels=2^(0:4))
 
@@ -130,7 +130,7 @@ Indsx64C3<-1:5+70
 
 plot(ylim=c(0,max(c(allsharedgpu780[Indsx4C1],allsharedgpu780[Indsx8C1],allsharedgpu780[Indsx16C1],
 allsharedgpu780[Indsx32C1],allsharedgpu780[Indsx64C1]))*1.25),x=1:5,typ="n",xaxt="n",xlab="n",
-ylab="Performance GFlops",main="GTX780 Sharedmemoryreduktion\n Performance mit Veränderung der Problemgröße \n  L1 prefered")
+ylab="Performance GFlops",main="GTX780, Kernel 1\n Performance mit Veränderung der Problemgröße \n  L1 prefered")
 
 axis(1,at=1:5,labels=2^(0:4))
 
@@ -155,7 +155,7 @@ lines(y=allsharedgpu780[Indsx64C1],x=1:5,col="magenta",pch=5)
 #Cacheconfig 2
 plot(ylim=c(0,max(c(allsharedgpu780[Indsx4C2],allsharedgpu780[Indsx8C2],allsharedgpu780[Indsx16C2],
 allsharedgpu780[Indsx32C2],allsharedgpu780[Indsx64C2]))*1.25),x=1:5,typ="n",xaxt="n",xlab="n",
-ylab="Performance GFlops",main="GTX780 Sharedmemoryreduktion\n Performance mit Veränderung der Problemgröße \n  Shared Memory Prefered")
+ylab="Performance GFlops",main="GTX780, Kernel 1\n Performance mit Veränderung der Problemgröße \n  Shared Memory Prefered")
 
 axis(1,at=1:5,labels=2^(0:4))
 
@@ -179,7 +179,7 @@ lines(y=allsharedgpu780[Indsx64C2],x=1:5,col="magenta",pch=5)
 #Cacheconfig 3
 plot(ylim=c(0,max(c(allsharedgpu780[Indsx4C3],allsharedgpu780[Indsx8C3],allsharedgpu780[Indsx16C3],
 allsharedgpu780[Indsx32C3],allsharedgpu780[Indsx64C3]))*1.25),x=1:5,typ="n",xaxt="n",xlab="n",
-ylab="Performance GFlops",main="GTX780 Sharedmemoryreduktion\n Performance mit Veränderung der Problemgröße \n  L1=shared Memory=32kB")
+ylab="Performance GFlops",main="GTX780, Kernel 1\n Performance mit Veränderung der Problemgröße \n  L1=shared Memory=32kB")
 
 axis(1,at=1:5,labels=2^(0:4))
 
@@ -231,7 +231,7 @@ Indsx64C3<-1:5+70
 
 plot(ylim=c(0,max(c(allsharedgpuP100[Indsx4C1],allsharedgpuP100[Indsx8C1],allsharedgpuP100[Indsx16C1],
 allsharedgpuP100[Indsx32C1],allsharedgpuP100[Indsx64C1]))*1.25),x=1:5,typ="n",xaxt="n",xlab="n",
-ylab="Performance GFlops",main="P100 Sharedmemoryreduktion\n Performance mit Veränderung der Problemgröße \n  L1 prefered")
+ylab="Performance GFlops",main="P100, Kernel 1\n Performance mit Veränderung der Problemgröße \n  L1 prefered")
 
 axis(1,at=1:5,labels=2^(0:4))
 
@@ -256,7 +256,7 @@ lines(y=allsharedgpuP100[Indsx64C1],x=1:5,col="magenta",pch=5)
 #Cacheconfig 2
 plot(ylim=c(0,max(c(allsharedgpuP100[Indsx4C2],allsharedgpuP100[Indsx8C2],allsharedgpuP100[Indsx16C2],
 allsharedgpuP100[Indsx32C2],allsharedgpuP100[Indsx64C2]))*1.25),x=1:5,typ="n",xaxt="n",xlab="n",
-ylab="Performance GFlops",main="P100 Sharedmemoryreduktion\n Performance mit Veränderung der Problemgröße \n  Shared Memory Prefered")
+ylab="Performance GFlops",main="P100, Kernel 1\n Performance mit Veränderung der Problemgröße \n  Shared Memory Prefered")
 
 axis(1,at=1:5,labels=2^(0:4))
 
@@ -280,7 +280,7 @@ lines(y=allsharedgpuP100[Indsx64C2],x=1:5,col="magenta",pch=5)
 #Cacheconfig 3
 plot(ylim=c(0,max(c(allsharedgpuP100[Indsx4C3],allsharedgpuP100[Indsx8C3],allsharedgpuP100[Indsx16C3],
 allsharedgpuP100[Indsx32C3],allsharedgpuP100[Indsx64C3]))*1.25),x=1:5,typ="n",xaxt="n",xlab="n",
-ylab="Performance GFlops",main="P100 Sharedmemoryreduktion\n Performance mit Veränderung der Problemgröße \n  L1=shared Memory=32kB")
+ylab="Performance GFlops",main="P100, Kernel 1\n Performance mit Veränderung der Problemgröße \n  L1=shared Memory=32kB")
 
 axis(1,at=1:5,labels=2^(0:4))
 

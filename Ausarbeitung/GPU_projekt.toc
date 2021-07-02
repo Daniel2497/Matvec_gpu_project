@@ -9,21 +9,20 @@
 \contentsline {subsection}{\numberline {3.1}Verwendete Grafikkarten}{6}%
 \contentsline {subsection}{\numberline {3.2}Problemgröße}{7}%
 \contentsline {subsection}{\numberline {3.3}Vergleich der Algorithmen}{7}%
-\contentsline {subsection}{\numberline {3.4}Kernel 3}{7}%
-\contentsline {subsection}{\numberline {3.5}Intragrids}{7}%
-\contentsline {subsection}{\numberline {3.6}Kernel 1 und 2}{7}%
-\contentsline {subsection}{\numberline {3.7}Shuffle}{8}%
-\contentsline {subsection}{\numberline {3.8}Vergleich der Grafikkarten}{8}%
-\contentsline {subsubsection}{\numberline {3.8.1}Kernel1}{8}%
-\contentsline {subsubsection}{\numberline {3.8.2}Kernel 2}{8}%
-\contentsline {subsection}{\numberline {3.9}Atomic Operationen}{8}%
-\contentsline {subsection}{\numberline {3.10}Einfluss der Problemgröße}{8}%
-\contentsline {subsubsection}{\numberline {3.10.1}Kernel 1 und Kernel 2}{8}%
-\contentsline {subsubsection}{\numberline {3.10.2}Kernel 3}{18}%
-\contentsline {subsection}{\numberline {3.11}Einfluss der Blockgröße}{18}%
-\contentsline {subsection}{\numberline {3.12}Einfluss der Größe von Shared Memory/ L1 Memory}{18}%
-\contentsline {subsection}{\numberline {3.13}Differenz zur theoretischen Peak Performance}{19}%
-\contentsline {subsection}{\numberline {3.14}Performance Vergleich CPU}{19}%
-\contentsline {section}{\numberline {4}Fazit}{20}%
-\contentsline {section}{\numberline {5}Quellen}{20}%
-\contentsline {chapter}{Quellenverzeichnis}{21}%
+\contentsline {subsubsection}{\numberline {3.3.1}Kernel 3}{7}%
+\contentsline {subsubsection}{\numberline {3.3.2}Intragrids}{7}%
+\contentsline {subsubsection}{\numberline {3.3.3}Kernel 1 und 2}{7}%
+\contentsline {subsubsection}{\numberline {3.3.4}Shuffle}{8}%
+\contentsline {subsection}{\numberline {3.4}Vergleich der Grafikkarten}{8}%
+\contentsline {subsubsection}{\numberline {3.4.1}Kernel1}{8}%
+\contentsline {subsubsection}{\numberline {3.4.2}Kernel 2}{8}%
+\contentsline {subsubsection}{\numberline {3.4.3}Atomic Operationen}{8}%
+\contentsline {subsection}{\numberline {3.5}Einfluss der Problemgröße}{8}%
+\contentsline {subsubsection}{\numberline {3.5.1}Kernel 1 und Kernel 2}{8}%
+\contentsline {subsubsection}{\numberline {3.5.2}Kernel 3}{20}%
+\contentsline {subsection}{\numberline {3.6}Einfluss der Blockgröße}{20}%
+\contentsline {subsection}{\numberline {3.7}Einfluss der Größe von Shared Memory/ L1 Memory}{20}%
+\contentsline {subsection}{\numberline {3.8}Differenz zur theoretischen Peak Performance}{21}%
+\contentsline {subsection}{\numberline {3.9}Performance Vergleich CPU}{21}%
+\contentsline {section}{\numberline {4}Fazit}{22}%
+\contentsline {chapter}{Quellenverzeichnis}{23}%

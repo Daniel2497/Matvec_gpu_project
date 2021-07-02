@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.24)  2 JUL 2021 00:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.24)  2 JUL 2021 12:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -300,12 +300,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout3 = `GPU_projekt.toc'.
 
  [2]
-Overfull \hbox (0.76279pt too wide) in paragraph at lines 61--73
-\T1/cmr/m/n/10 Damit liefert jeder thread-block als Zwis-ch-en-ergeb-nis ein Sp
-al-tenvek-tor der Gröÿe
- []
-
-
 Overfull \hbox (10.38544pt too wide) in paragraph at lines 61--73
 \T1/cmr/m/n/10 blöcke in gle-icher Rei-hen-folge in buff un-tere-inan-der, die 
 Ergeb-nisse der nebeneinan-
@@ -349,20 +343,14 @@ Overfull \hbox (6.58704pt too wide) in paragraph at lines 129--135
  []
 
 
-Overfull \hbox (2.41516pt too wide) in paragraph at lines 145--146
-\T1/cmr/m/n/10 ver-schiedene threads auf die sel-ben Spe-icherzellen schreiben,
- welche keinen geteil-
- []
-
-
-Overfull \hbox (5.37741pt too wide) in paragraph at lines 145--146
-\T1/cmr/m/n/10 ten Spe-icher en-thal-ten. Dies hat zur Folge, dass die entsprec
-hen-den Spe-icherzellen
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
+ []
+
+
+Overfull \hbox (6.24756pt too wide) in paragraph at lines 147--148
+\T1/cmr/m/n/10 Die Meth-ode mit in-tra-grids zeigt eine et-was bessere, aber no
+ch nicht viel schnellere
  []
 
 
@@ -470,8 +458,30 @@ Overfull \hbox (59.71254pt too wide) in paragraph at lines 220--221
 [][] 
  []
 
+<../Diagramme/shuffle.pdf, id=53, page=2, 505.89pt x 505.89pt>
+File: ../Diagramme/shuffle.pdf Graphic file (type pdf)
+<use ../Diagramme/shuffle.pdf, page 2>
+Package pdftex.def Info: ../Diagramme/shuffle.pdf , page2 used on input line 22
+6.
+(pdftex.def)             Requested size: 404.71254pt x 404.71254pt.
 
-Overfull \hbox (18.24463pt too wide) in paragraph at lines 232--233
+Overfull \hbox (59.71254pt too wide) in paragraph at lines 226--227
+[][] 
+ []
+
+<../Diagramme/shuffle.pdf, id=54, page=1, 505.89pt x 505.89pt>
+File: ../Diagramme/shuffle.pdf Graphic file (type pdf)
+<use ../Diagramme/shuffle.pdf, page 1>
+Package pdftex.def Info: ../Diagramme/shuffle.pdf , page1 used on input line 23
+3.
+(pdftex.def)             Requested size: 404.71254pt x 404.71254pt.
+
+Overfull \hbox (59.71254pt too wide) in paragraph at lines 233--234
+[][] 
+ []
+
+
+Overfull \hbox (18.24463pt too wide) in paragraph at lines 244--245
 \T1/cmr/m/n/10 Bei der Ver-wen-dung des Ker-nel1 ist die P100 deut-lich schnell
 er als die RTX2070super
  []
@@ -481,40 +491,35 @@ i.pdf>] [11 <../Diagramme/allshared_changei.pdf>] [12 <../Diagramme/sharedatomi
 c_chagei.pdf>] [13 <../Diagramme/sharedatomic_chagei.pdf>] [14 <../Diagramme/sh
 aredatomic_chagei.pdf>] [15 <../Diagramme/onlyatomic_changei.pdf>] [16 <../Diag
 ramme/onlyatomic_changei.pdf>] [17 <../Diagramme/onlyatomic_changei.pdf>]
-Overfull \hbox (11.91605pt too wide) in paragraph at lines 252--253
+[18 <../Diagramme/shuffle.pdf>] [19 <../Diagramme/shuffle.pdf>]
+Overfull \hbox (11.91605pt too wide) in paragraph at lines 264--265
 [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.71844pt too wide) in paragraph at lines 253--254
+Overfull \hbox (1.71844pt too wide) in paragraph at lines 265--266
 [][][][][][][][][][] 
  []
 
-[18] [19]
-Overfull \hbox (71.92596pt too wide) in paragraph at lines 270--273
-\T1/cmr/m/n/10 - https://www.nvidia.de/gtx-700-graphics-cards/gtx-780/ -https:/
-/www.computerbase.de/2016-
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 277--278
+[20] [21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
 [] \T1/cmr/m/it/10 https://www.computerbase.de/2016-04/nvidia-tesla-p100-gp100-
 als-
  []
 
-[21] (./GPU_projekt.aux)
+[23] (./GPU_projekt.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5917 strings out of 483183
- 79499 string characters out of 5966292
+ 5928 strings out of 483183
+ 79842 string characters out of 5966292
  508089 words of memory out of 5000000
- 20849 multiletter control sequences out of 15000+600000
+ 20859 multiletter control sequences out of 15000+600000
  545363 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,9n,60p,1498b,1126s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,10n,60p,1534b,1126s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.60
 0pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcti0800.
 600pk> </home/daniel/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti080
@@ -535,10 +540,10 @@ i7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on GPU_projekt.pdf (21 pages, 231987 bytes).
+Output written on GPU_projekt.pdf (23 pages, 236150 bytes).
 PDF statistics:
- 560 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
+ 570 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
