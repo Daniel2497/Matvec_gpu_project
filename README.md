@@ -46,12 +46,19 @@ shuffle
 ## Ausführung der Executable
 
 exe in {shuffle,intragrid,onlyatomic,sharedatomic,onlyshared}
+
 ./exe bewirkt die Ausführung mit Blockgröße sx=32, sy=32, size=1024, Standard Cache Konfiguration, keine Ausgabe des Ergebnisses
+
 ./exe a bewirkt die Ausführung mit Blockgröße sx=a, sy=32, size=1024, Standard Cache Konfiguration, keine Ausgabe des Ergebnisses
+
 ./exe a b bewirkt die Ausführung mit Blockgröße sx=a, sy=b, size=1024, Standard Cache Konfiguration, keine Ausgabe des Ergebnisses
+
 ./exe a b c bewirkt die Ausführung mit Blockgröße sx=a, sy=b, size=1024*c, Standard Cache Konfiguration, keine Ausgabe des Ergebnisses
+
 ./exe a b c 1 bewirkt die Ausführung mit Blockgröße sx=a, sy=b, size=1024*c, L1 prefered, keine Ausgabe des Ergebnisses
+
 ./exe a b c 2 bewirkt die Ausführung mit Blockgröße sx=a, sy=b, size=1024*c, shared memory prefered, keine Ausgabe des Ergebnisses
+
 ./exe a b c 3 e bewirkt die Ausführung mit Blockgröße sx=a, sy=b, size=1024*c, none prefered, Ausgabe des Ergebnisses
 
 ## Erstellung der Messergebnisse
