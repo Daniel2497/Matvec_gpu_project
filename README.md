@@ -99,9 +99,13 @@ Die Messergebnisse für die CPU Implementierung findet sich im Ordner CPU_test u
 Cachekoniguration: 	1->L1 prefered
 			2->sharedmemory prefered
 			3->nonprefered
+			
 sx: sx steht für die Threadblockgröße in x Dimension bei GPU Ausführung
+
 sy: sy steht für die Threadblockgröße in x Dimension bei GPU Ausführung
+
 i: i steht für die Problemgröße 1024*i
+
 Computation time: Rechenzeit in ms,
 
 
